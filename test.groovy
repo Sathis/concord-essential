@@ -12,6 +12,8 @@ def data = jsonSlurper.parse(new File("demo.json"))
 
 println(data.name)
 
+println(args[0])
+
 println("Invoking http call")
 
 httpClient.execute(new HttpGet("http://google.com"))

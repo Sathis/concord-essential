@@ -4,14 +4,13 @@ configuration:
   - "mvn://org.apache.ivy:ivy:2.4.0"
   arguments:
     user: ${crypto.decryptString("FdHb04rLnlD4HYMFKTNuhw==")}
-    pass: ${crypto.decryptString("mCT2TytGGwsdR3fdbmhQVQ==")}
 flows:
   default:
   - script: test.groovy
   onPush:
   - log: "${event.sender} - ${event.commitId} to ${event.payload.repository.full_name}"
-  - log "Username - ${user} , pass - ${pass}
-  - script: test.groovy
+  - log: "Username - ${user}"
+  - script: test.groovy ${user}
 triggers:
 - github:
     entryPoint: "onPush"
