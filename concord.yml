@@ -1,3 +1,10 @@
+configuration:
+  dependencies:
+  - "mvn://org.codehaus.groovy:groovy-all:pom:2.5.2"
 flows:
   default:
-  - log: "Hello, ${name}"
+  - script: groovy
+    body: |
+      def x = 2 * 3
+      execution.setVariable("result", x)
+  - log: ${result}
