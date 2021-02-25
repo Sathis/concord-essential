@@ -5,3 +5,11 @@ configuration:
 flows:
   default:
   - script: test.groovy
+  onPush:
+  - log: "${event.sender} pushed ${event.commitId} to ${event.payload.repository.full_name}"
+triggers:
+- github:
+    useInitiator: true
+    entryPoint: onPush
+    conditions:
+      type: push
