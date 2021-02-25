@@ -2,11 +2,15 @@ configuration:
   dependencies:
   - "mvn://org.codehaus.groovy:groovy-all:pom:2.5.2"
   - "mvn://org.apache.ivy:ivy:2.4.0"
+  arguments:
+    user: ${crypto.decryptString("FdHb04rLnlD4HYMFKTNuhw==")}
+    pass: ${crypto.decryptString("mCT2TytGGwsdR3fdbmhQVQ==")}
 flows:
   default:
   - script: test.groovy
   onPush:
   - log: "${event.sender} - ${event.commitId} to ${event.payload.repository.full_name}"
+  - log "Username - ${user} , pass - ${pass}
   - script: test.groovy
 triggers:
 - github:
