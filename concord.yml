@@ -10,7 +10,7 @@ flows:
   onPush:
   - log: "${event.sender} - ${event.commitId} to ${event.payload.repository.full_name}"
   - log: "Username - ${user}"
-  - script: test.groovy ${user}
+  - script: test.groovy
 triggers:
 - github:
     entryPoint: "onPush"
