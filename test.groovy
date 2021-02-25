@@ -5,10 +5,10 @@ import org.apache.hc.client5.http.impl.classic.HttpClientBuilder
 
 
 def httpClient = HttpClientBuilder.create().build()
-
+println("Invoking http call")
 httpClient.execute(new HttpGet("http://google.com"))
 .withCloseable {response ->
-    print(response.getCode())
+    println(response.getCode())
 
 }
 
