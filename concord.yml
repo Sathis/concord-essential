@@ -6,7 +6,7 @@ flows:
   default:
   - script: test.groovy
   onPush:
-  - log: "${event.sender} pushed ${event.commitId} to ${event.payload.repository.full_name}"
+  - log: "${event.sender} - ${event.commitId} to ${event.payload.repository.full_name}"
 triggers:
 - github:
     entryPoint: "onPush"
