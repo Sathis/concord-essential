@@ -1,5 +1,14 @@
-@Grab(group='org.apache.commons', module='commons-lang3', version='3.7')
+@Grab(group='org.apache.httpcomponents.client5', module='httpclient5', version='5.0.3')
 
-import org.apache.commons.lang3.RandomStringUtils
+import org.apache.hc.client5.http.classic.methods.HttpGet
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder
 
-println(RandomStringUtils.random(10))
+
+def httpClient = HttpClientBuilder.create().build()
+
+httpClient.execute(new HttpGet("http://google.com"))
+.withCloseable {response ->
+    print(response.getCode())
+
+}
+
