@@ -1,10 +1,7 @@
 configuration:
   dependencies:
   - "mvn://org.codehaus.groovy:groovy-all:pom:2.5.2"
+  - "mvn://org.apache.ivy:ivy:2.4.0"
 flows:
   default:
-  - script: groovy
-    body: |
-      def x = 2 * 3
-      execution.setVariable("result", x)
-  - log: ${result}
+  - script: test.groovy
