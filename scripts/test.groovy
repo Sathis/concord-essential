@@ -11,7 +11,7 @@ def httpClient = HttpClientBuilder.create().build()
 def jsonSlurper = new JsonSlurper()
 def data = jsonSlurper.parse(new File("demo.json"))
 
-def report = new File("reports/demo.rdl").text
+def report = new File("./reports/demo.rdl").text
 
 println(report)
 
