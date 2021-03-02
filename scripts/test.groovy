@@ -13,7 +13,7 @@ def data = jsonSlurper.parse(new File("demo.json"))
 
 println(data.name)
 
-println("${user}.toCharArray()")
+println("${user}".toCharArray())
 
 
 
