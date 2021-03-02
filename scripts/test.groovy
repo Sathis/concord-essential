@@ -13,11 +13,9 @@ def data = jsonSlurper.parse(new File("demo.json"))
 
 println(data.name)
 
-println("${user}")
+println("${user}.toCharArray()")
 
-def user = "${user}"
 
-println(user)
 
 println("Invoking http call")
 
