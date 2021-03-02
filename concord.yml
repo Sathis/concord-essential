@@ -6,11 +6,11 @@ configuration:
     user: ${crypto.decryptString("FdHb04rLnlD4HYMFKTNuhw==")}
 flows:
   default:
-  - script: test.groovy
+  - script: ./scripts/test.groovy
   onPush:
   - log: "${event.sender} - ${event.commitId} to ${event.payload.repository.full_name}"
   - log: "Username - ${user}"
-  - script: test.groovy
+  - script: ./scripts/test.groovy
 triggers:
 - github:
     entryPoint: "onPush"
