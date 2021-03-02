@@ -1,5 +1,6 @@
 import groovy.json.JsonSlurper
 @Grab(group='org.apache.httpcomponents.client5', module='httpclient5', version='5.0.3')
+@GrabExclude('commons-codec:commons-codec')
 
 import org.apache.hc.client5.http.classic.methods.HttpGet
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder
